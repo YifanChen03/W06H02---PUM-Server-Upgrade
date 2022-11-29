@@ -9,7 +9,17 @@ public class MultiStack {
 	}
 
 	// TODO implement missing methods
+	public void push(int n) {
 
+	}
+
+	public int top() {
+		return Integer.MIN_VALUE;
+	}
+
+	public int pop() {
+		return Integer.MIN_VALUE;
+	}
 	@Override
 	public String toString() {
 		return stacks.toString();
