@@ -15,6 +15,9 @@ public class Stack {
 	}
 
 	// TODO implement missing methods
+	public void push (int n) {
+
+	}
 
 	@Override
 	public String toString() {

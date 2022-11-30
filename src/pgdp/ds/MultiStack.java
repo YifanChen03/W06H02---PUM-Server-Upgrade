@@ -10,6 +10,7 @@ public class MultiStack {
 
 	// TODO implement missing methods
 	public void push(int n) {
+
 	}
 
 	public int top() {
