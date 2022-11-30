@@ -27,12 +27,18 @@ public class RingBuffer {
 	}
 
 	public boolean isFull() {
+		int c = 0;
 		for (int i = 0; i < mem.length; i++) {
-			if (mem[i] == 0) {
-				return false;
+			if (mem[i] != 0) {
+				c++;
 			}
 		}
-		return true;
+		if (c == mem.length) {
+			return true;
+		} else {
+			return false;
+		}
+
 	}
 
 	public boolean put(int n) {
