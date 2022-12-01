@@ -52,6 +52,7 @@ public class Stack {
 				return mem[0];
 			}
 		}
+		//falls übernächster == null
 		if (next.getNext() == null) {
 			if (next.getTop() == 0) {
 				int temp = next.getMem()[0];
