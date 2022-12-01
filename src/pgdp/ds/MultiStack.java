@@ -10,14 +10,15 @@ public class MultiStack {
 
 	// TODO implement missing methods
 	public void push(int n) {
-		//
+		stacks.push(n);
 	}
 
 	public int top() {
-		return Integer.MIN_VALUE;
+		return stacks.top();
 	}
 
 	public int pop() {
+
 		return Integer.MIN_VALUE;
 	}
 	@Override
