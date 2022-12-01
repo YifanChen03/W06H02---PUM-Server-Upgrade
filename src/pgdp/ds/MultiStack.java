@@ -18,8 +18,7 @@ public class MultiStack {
 	}
 
 	public int pop() {
-
-		return Integer.MIN_VALUE;
+		return stacks.pop();
 	}
 	@Override
 	public String toString() {

@@ -16,32 +16,56 @@ public class Stack {
 
 	// TODO implement missing methods
 	public void push (int n) {
-		if (mem.length + top < 0) {
+		if (top == mem.length - 1) {
 			if (next == null) {
 				this.setNext(new Stack(mem.length * 2));
+				next.push(n);
 			} else {
-				this.getNext().push(n);
+				next.push(n);
 			}
 		} else {
 			//Stoppbedingung falls rb einen freien Platz hat
-			mem[mem.length + top] = n;
-			top--;
+			top++;
+			mem[top] = n;
 		}
 	}
 
 	public int top() {
-		if (this == null && next == null) {
+		if (top == -1 && next == null) {
 			return Integer.MIN_VALUE;
 		}
 		if (next == null) {
-			return top;
+			return mem[top];
 		} else {
-			return this.getNext().top();
+			return next.top();
 		}
 	}
 
 	public int pop() {
-		return Integer.MIN_VALUE;
+		//falls nächstes ist null für ersten stack
+		if (next == null) {
+			//falls erster stack leer
+			if (top == -1) {
+				return Integer.MIN_VALUE;
+			} else {
+				top = -1;
+				return mem[0];
+			}
+		}
+		if (next.getNext() == null) {
+			if (next.getTop() == 0) {
+				int temp = next.getMem()[0];
+				next.setTop(-1);
+				this.setNext(null);
+				return temp;
+			} else {
+				int temp = next.getMem()[next.getTop()];
+				next.setTop(next.getTop() - 1);
+				return temp;
+			}
+		}
+
+		return next.pop();
 	}
 
 	@Override
