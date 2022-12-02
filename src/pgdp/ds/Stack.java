@@ -24,7 +24,7 @@ public class Stack {
 				next.push(n);
 			}
 		} else {
-			//Stoppbedingung falls rb einen freien Platz hat
+			//Stoppbedingung falls rb einen freien Platz hat, top verschieben
 			top++;
 			mem[top] = n;
 		}
